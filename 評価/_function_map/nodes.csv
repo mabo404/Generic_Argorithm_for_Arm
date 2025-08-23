@@ -1,0 +1,9 @@
+function,file,isPrimary,indegree,outdegree
+argmin_vecnorm,argmin_vecnorm.m,1,2,0
+default_selectors,default_selectors.m,1,0,0
+get_or_nan,get_or_nan.m,1,0,0
+getdef,getdef.m,1,1,0
+must_have,must_have.m,1,1,0
+name2idx,name2idx.m,1,1,0
+pick_representatives,pick_representatives.m,1,0,5
+tie_break,tie_break.m,1,1,1
