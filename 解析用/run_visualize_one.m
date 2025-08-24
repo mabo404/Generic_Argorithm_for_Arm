@@ -1,0 +1,1 @@
+function run_visualize_one(), test_visualize_one_pose(); end
