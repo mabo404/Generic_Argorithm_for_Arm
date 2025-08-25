@@ -1,10 +1,10 @@
 classdef Log
     methods (Static)
-        function append_debug_row(dbgfile, g, tsec, invcnt, viol, best_obj)
-            fid = fopen(dbgfile,'a');
-            fprintf(fid,'%d,%.6f,%d,%d,%.8g,%.8g,%.8g,%.8g\n', g, tsec, invcnt, viol, best_obj);
-            fclose(fid);
-        end
+        % function append_debug_row(dbgfile, g, tsec, invcnt, viol, best_obj)
+        %     fid = fopen(dbgfile,'a');
+        %     fprintf(fid,'%d,%.6f,%d,%d,%.8g,%.8g,%.8g,%.8g\n', g, tsec, invcnt, viol, best_obj);
+        %     fclose(fid);
+        % end
 
         function log_write_generation(gen, objs, vars, logdir, meta)
             if ~exist(logdir,'dir'), mkdir(logdir); end
@@ -38,12 +38,12 @@ classdef Log
             end
         end
 
-        function save_generation_csv(logdir, g, vars, objs)
-            try
-                writematrix(vars, fullfile(logdir, sprintf('generation_%03d_vars.csv', g)));
-                writematrix(objs, fullfile(logdir, sprintf('generation_%03d_objs.csv', g)));
-            catch
-            end
-        end
+        % function save_generation_csv(logdir, g, vars, objs)
+        %     try
+        %         writematrix(vars, fullfile(logdir, sprintf('generation_%03d_vars.csv', g)));
+        %         writematrix(objs, fullfile(logdir, sprintf('generation_%03d_objs.csv', g)));
+        %     catch
+        %     end
+        % end
     end
 end

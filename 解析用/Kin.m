@@ -38,9 +38,9 @@ classdef Kin
             T = eye(4);
             for i = 1:6
                 if ismember(i,[1,4,6])
-                    R = rotz(th(i));
+                    R = SE3.rotz(th(i));
                 else
-                    R = rotx(th(i));
+                    R = SE3.rotx(th(i));
                 end
                 R = real(double(R));
 
@@ -65,8 +65,8 @@ classdef Kin
             joints = zeros(3,7);
             joints(:,1) = T(1:3,4);
             for i = 1:6
-                if ismember(i,[1,4,6]), R = rotz(theta(i)); else, R = rotx(theta(i)); end
-                T = T * R * transl(0,0,L(i));
+                if ismember(i,[1,4,6]), R = SE3.rotz(theta(i)); else, R = SE3.rotx(theta(i)); end
+                T = T * R * SE3.transl(0,0,L(i));
                 joints(:,i+1) = T(1:3,4);
             end
 
@@ -81,11 +81,11 @@ classdef Kin
             T = eye(4);
             for i = 1:6
                 if ismember(i, [1,4,6])
-                    R = rotz(theta(i));
+                    R = SE3.rotz(theta(i));
                 else
-                    R = rotx(theta(i));
+                    R = SE3.rotx(theta(i));
                 end
-                T = T * R * transl(0, 0, L(i));
+                T = T * R * SE3.transl(0, 0, L(i));
             end
             T_end = T;
             pos = T(1:3,4);

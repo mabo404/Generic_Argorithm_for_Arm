@@ -12,7 +12,7 @@ function visualize_arm_pose(L, theta)
         else
             R = rotx(theta(i));
         end
-        T_end = T_end * R * transl(0, 0, L(i));
+        T_end = T_end * R * SE3.transl(0, 0, L(i));
     end
     pos_end = T_end(1:3, 4);
     R_end = T_end(1:3, 1:3);

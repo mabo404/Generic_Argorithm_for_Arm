@@ -58,11 +58,11 @@ classdef Dyn
             T = eye(4);
             for i = 1:ell
                 if ismember(i, [1,4,6])
-                    R = rotz(theta(i));
+                    R = SE3.rotz(theta(i));
                 else
-                    R = rotx(theta(i));
+                    R = SE3.rotx(theta(i));
                 end
-                T = T * R * transl(0,0,L(i));
+                T = T * R * SE3.transl(0,0,L(i));
             end
             ph = T * [0; 0; c(ell)*L(ell); 1];
             p  = ph(1:3);
