@@ -1,1 +1,0 @@
-function run_ga(), Generic_algorithm_arm(); end
